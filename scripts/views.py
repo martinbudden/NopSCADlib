@@ -268,7 +268,7 @@ def views(target, do_assemblies = None):
         # Build TOC
         #
         print('\n## Table of Contents\n', file = doc_file)
-        print('1. [Parts list](#Parts_list)', file = doc_file)
+        print('1. [Parts list](#Parts_list)\n', file = doc_file)
         for ass in flat_bom:
             name =  ass["name"]
             cap_name = titalise(name)
@@ -281,7 +281,7 @@ def views(target, do_assemblies = None):
         # Global BOM
         #
         global_bom = [merged(ass) for ass in flat_bom if not ass['ngb']]
-        print('<a name="Parts_list"></a>\n\n## Parts list\n', file = doc_file)
+        print('<a name="Parts_list"></a>\n\n## Parts list\n\n', file = doc_file)
         headings = {"vitamins" : "vitamins", "printed" : "3D printed parts", "routed" : "CNC routed parts"}
         things = {}
         for t in types:
