@@ -36,7 +36,7 @@ from blurb import *
 from colorama import Fore
 from tmpdir import *
 
-image_size = "--imgsize=4096,4096"
+image_size = "--imgsize=2048,2048"
 threshold = 20  # Image comparison allowed number of different pixels
 fuzz = 5       # Image comparison allowed percentage error in pixel value
 
@@ -55,6 +55,7 @@ def do_cmd(cmd, output = sys.stdout):
     return rv
 
 def compare_images(a, b, c):
+    #return -1
     if not os.path.isfile(b):
         print(Fore.MAGENTA + "Failed to generate %s while making %s" % (b, a), Fore.WHITE)
         sys.exit(1)
