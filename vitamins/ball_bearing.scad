@@ -42,7 +42,7 @@ function bb_flange_width(type)    = type[8]; //! Flange width
 module ball_bearing(type) { //! Draw a ball bearing
     shield = bb_colour(type);
     suffix = shield == "silver" ? "ZZ " : "-2RS ";
-    vitamin(str("ball_bearing(BB", bb_name(type), "): Cartridge bearing ", bb_name(type), suffix, bb_bore(type), "mm x ", bb_diameter(type), "mm x ", bb_width(type), "mm"));
+    vitamin(str("ball_bearing(BB", bb_name(type), "): Ball bearing ", bb_name(type), suffix, bb_bore(type), "mm x ", bb_diameter(type), "mm x ", bb_width(type), "mm"));
     rim = bb_rim(type);
     hub = bb_hub(type);
     h = bb_width(type);
