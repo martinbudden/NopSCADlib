@@ -350,8 +350,8 @@ def views(target, do_assemblies = None):
                 print("|Qty|Description|",    file = doc_file)
                 print("|---:|:----------|",    file = doc_file)
                 for v in sorted(vitamins, key = lambda s: s.split(":")[-1]):
-                    print("|%d|%s|" % (vitamins[v]["count"], v.split(":")[1]),     file = doc_file)
-                print("\n", file = doc_file)
+                    print("| %d |%s |" % (vitamins[v]["count"], v.split(":")[1]),     file = doc_file)
+                print("", file = doc_file)
 
             printed = ass["printed"]
             if printed:
@@ -364,8 +364,7 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('---|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
-                            print('| ![%s](stls/%s) %s' % (part, part.replace('.stl','.png'), '|\n' if j == j - 1 else ''), end = '', file = doc_file)
-                        print('\n', file = doc_file)
+                            print('| ![%s](stls/%s)%s' % (part, part.replace('.stl','.png'), ' |' if j == n - 1 else ' '), end = '', file = doc_file)
                 print('\n', file  = doc_file)
 
             routed = ass["routed"]
@@ -379,8 +378,7 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('---|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
-                            print('| ![%s](dxfs/%s) %s' % (part, part.replace('.dxf','.png'), '|\n' if j == j - 1 else ''), end = '', file = doc_file)
-                        print('\n', file = doc_file)
+                            print('| ![%s](dxfs/%s)%s' % (part, part.replace('.dxf','.png'), ' |' if j == n - 1 else ' '), end = '', file = doc_file)
                 print('\n', file  = doc_file)
 
             sub_assemblies = ass["assemblies"]
@@ -394,8 +392,7 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('---|' * n), file =  doc_file)
                         for j in range(n):
                             a = keys[i - n + j + 1].replace('_assembly', '_assembled')
-                            print('| ![%s](assemblies/%s) %s' % (a, a + '_tn.png', '|\n' if j == j - 1 else ''), end = '', file = doc_file)
-                        print('\n', file = doc_file)
+                            print('| ![%s](assemblies/%s)%s' % (a, a + '_tn.png', ' |' if j == n - 1 else ' '), end = '', file = doc_file)
                 print('\n', file  = doc_file)
 
             small = not ass["big"]
