@@ -51,7 +51,7 @@ module washer(type) { //! Draw specified washer
     if(washer_soft(type))
         vitamin(str("washer(", type[0], "_washer): Washer rubber M", hole, " x ", diameter, "mm x ", thickness, "mm"));
     else
-        vitamin(str("washer(", type[0], "_washer): Washer ", penny ? "penny " : "", " M", hole, " x ", diameter, "mm x ", thickness, "mm"));
+        vitamin(str("washer(", type[0], "_washer): Washer ", penny ? "penny " : "", "M", hole));
     color(washer_colour(type))
         linear_extrude( thickness - 0.05)
             difference() {

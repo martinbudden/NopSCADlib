@@ -83,7 +83,7 @@ function screw_insert(screw, short = false, i = 0) =  //! Find insert to fit spe
                                                              : screw_insert(screw, short, i + 1);
 
 module screw(type, length, hob_point = 0, nylon = false) { //! Draw specified screw, optionally hobbed or nylon
-    description = str("Screw ", nylon ? "Nylon " : "", type[1], length < 10 ? " x  " : " x ", length, "mm", hob_point ? str(", hobbed at ", hob_point) : "");
+    description = str(screw_nut(type) ? "Bolt " : "Screw ", nylon ? "Nylon " : "", type[1], length < 10 ? " x  " : " x ", length, "mm", hob_point ? str(", hobbed at ", hob_point) : "");
     vitamin(str("screw(", type[0], "_screw, ", length, arg(hob_point, 0, "hob_point"), arg(nylon, false, "nylon"), "): ", description));
 
     head_type   = screw_head_type(type);

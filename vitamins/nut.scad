@@ -51,9 +51,9 @@ module nut(type, nyloc = false, brass = false, nylon = false) { //! Draw specifi
     outer_rad = nut_radius(type);
     thickness = nut_thickness(type);
     nyloc_thickness = nut_thickness(type, true);
-    desc = nyloc ? "nyloc" : brass ? "brass" : nylon ? "nylon" : "";
+    desc = nyloc ? " nyloc" : brass ? " brass" : nylon ? " nylon" : "";
     vitamin(str("nut(", type[0], arg(nyloc, false, "nyloc"), arg(brass, false, "brass"), arg(nylon, false, "nylon"),
-                   "): Nut M", nut_size(type), " x ", thickness, "mm ", desc));
+                   "): Nut M", nut_size(type), desc));
 
     colour = brass ? brass_colour : nylon ? grey(30): grey(70);
     explode(nyloc ? 10 : 0) {
