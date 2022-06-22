@@ -223,14 +223,18 @@ def views(target, do_assemblies = None):
                                                 target_def = ['-D$target="%s"' % target] if target else []
                                                 cwd_def = ['-D$cwd="%s"' % os.getcwd().replace('\\', '/')]
                                                 view_def = ['--viewall', '--autocenter'] if not (zoomed & (1 << explode)) else ['--camera=0,0,0,55,0,25,140']
-                                                openscad.run_list(["-o", tmp_name, png_maker_name] + options.list() + target_def + cwd_def + view_def + ["-D$pose=1", "-D$explode=%d" % explode, colour_scheme, "--projection=p", image_size, "-d", dname]);
+                                                openscad.run_list(["-o", tmp_name, png_maker_name] + ["-D$explode=%d" % explode, image_size, "-D$pose=1", "--projection=p", colour_scheme, "-d", dname] + options.list() + target_def + cwd_def + view_def);
                                                 times.add_time(png_name, t)
-                                                do_cmd(["magick", tmp_name, "-trim", "-resize", "1004x1004", "-bordercolor", background, "-border", "10", tmp_name])
+                                                print(Fore.MAGENTA, end='')
+                                                do_cmd(["magick", tmp_name, "-resize", "1004x1004", "-trim", "-bordercolor", background, "-border", "10", tmp_name])
+                                                print(Fore.WHITE, end='')
                                                 update_image(tmp_name, png_name)
                                                 os.remove(png_maker_name)
                                             tn_name = png_name.replace('.png', '_tn.png')
                                             if mtime(png_name) > mtime(tn_name):
-                                                do_cmd(("magick "+ png_name + " -trim -resize 280x280 -background " + background + " -gravity Center -extent 280x280 -bordercolor " + background + " -border 10 " + tmp_name).split())
+                                                print(Fore.MAGENTA, end='')
+                                                do_cmd(("magick " + png_name + " -resize 280x280 -trim -bordercolor " + background + " -border 10 -gravity Center -extent 280x280 -background " + background + " " + tmp_name).split())
+                                                print(Fore.WHITE, end='')
                                                 update_image(tmp_name, tn_name)
                                     done_assemblies.append(real_name)
                                 else:
@@ -295,7 +299,7 @@ def views(target, do_assemblies = None):
                 name = "%d x %s" % (ass["count"], name)
             print('| <span style="writing-mode: vertical-rl; text-orientation: mixed;">%s</span> ' % name, file = doc_file, end = '')
         print('| <span style="writing-mode: vertical-rl; text-orientation: mixed;">TOTALS</span> |  |', file = doc_file)
-        print(('|---:' * len(global_bom) + '|---:|:---|'), file = doc_file)
+        print(('|-----:' * len(global_bom) + '|------:|:-------------|'), file = doc_file)
 
         for t in types:
             if things[t]:
