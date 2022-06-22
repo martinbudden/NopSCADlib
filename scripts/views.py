@@ -246,8 +246,8 @@ def views(target, do_assemblies = None):
         # Title, description and picture
         #
         project = ' '.join(word[0].upper() + word[1:] for word in os.path.basename(os.getcwd()).split('_'))
-        print('<a name="TOP"></a>', file = doc_file)
-        print('# %s' % project, file = doc_file)
+        print('<a name="TOP"></a>\n', file = doc_file)
+        print('# %s\n' % project, file = doc_file)
         text = blurb.scrape_blurb(source_dir + '/' + main_file)
         blurbs = blurb.split_blurb(text)
         if len(text):
@@ -263,7 +263,7 @@ def views(target, do_assemblies = None):
         #
         # Build TOC
         #
-        print('## Table of Contents', file = doc_file)
+        print('\n## Table of Contents\n', file = doc_file)
         print('1. [Parts list](#Parts_list)', file = doc_file)
         for ass in flat_bom:
             name =  ass["name"]
@@ -277,7 +277,7 @@ def views(target, do_assemblies = None):
         # Global BOM
         #
         global_bom = [merged(ass) for ass in flat_bom if not ass['ngb']]
-        print('<a name="Parts_list"></a>\n## Parts list', file = doc_file)
+        print('<a name="Parts_list"></a>\n\n## Parts list\n', file = doc_file)
         headings = {"vitamins" : "vitamins", "printed" : "3D printed parts", "routed" : "CNC routed parts"}
         things = {}
         for t in types:
@@ -334,19 +334,19 @@ def views(target, do_assemblies = None):
             name = ass["name"]
             cap_name = titalise(name)
 
-            print('<a name="%s"></a>' % name, file = doc_file)
+            print('<a name="%s"></a>\n' % name, file = doc_file)
             if ass["count"] > 1:
-                print('## %d x %s' % (ass["count"], cap_name), file = doc_file)
+                print('## %d x %s\n' % (ass["count"], cap_name), file = doc_file)
             else:
-                print('## %s' % cap_name, file = doc_file)
+                print('## %s\n' % cap_name, file = doc_file)
             vitamins = ass["vitamins"]
             if vitamins:
-                print("### Vitamins",         file = doc_file)
-                print("|Qty|Description|",    file = doc_file)
-                print("|---:|:----------|",    file = doc_file)
+                print("### Vitamins\n",       file = doc_file)
+                print("| Qty | Description |",    file = doc_file)
+                print("|----:|:------------|",    file = doc_file)
                 for v in sorted(vitamins, key = lambda s: s.split(":")[-1]):
-                    print("|%d|%s|" % (vitamins[v]["count"], v.split(":")[1]),     file = doc_file)
-                print("\n", file = doc_file)
+                    print("|%4d |%s |" % (vitamins[v]["count"], v.split(":")[1]),     file = doc_file)
+                print("", file = doc_file)
 
             printed = ass["printed"]
             if printed:
@@ -359,8 +359,7 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('---|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
-                            print('| ![%s](stls/%s) %s' % (part, part.replace('.stl','.png'), '|\n' if j == j - 1 else ''), end = '', file = doc_file)
-                        print('\n', file = doc_file)
+                            print('| ![%s](stls/%s)%s' % (part, part.replace('.stl','.png'), ' |' if j == n - 1 else ' '), end = '', file = doc_file)
                 print('\n', file  = doc_file)
 
             routed = ass["routed"]
@@ -374,8 +373,7 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('---|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
-                            print('| ![%s](dxfs/%s) %s' % (part, part.replace('.dxf','.png'), '|\n' if j == j - 1 else ''), end = '', file = doc_file)
-                        print('\n', file = doc_file)
+                            print('| ![%s](dxfs/%s)%s' % (part, part.replace('.dxf','.png'), ' |' if j == n - 1 else ' '), end = '', file = doc_file)
                 print('\n', file  = doc_file)
 
             sub_assemblies = ass["assemblies"]
@@ -389,13 +387,12 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('---|' * n), file =  doc_file)
                         for j in range(n):
                             a = keys[i - n + j + 1].replace('_assembly', '_assembled')
-                            print('| ![%s](assemblies/%s) %s' % (a, a + '_tn.png', '|\n' if j == j - 1 else ''), end = '', file = doc_file)
-                        print('\n', file = doc_file)
+                            print('| ![%s](assemblies/%s)%s' % (a, a + '_tn.png', ' |' if j == n - 1 else ' '), end = '', file = doc_file)
                 print('\n', file  = doc_file)
 
             small = not ass["big"]
             suffix = '_tn.png' if small else '.png'
-            print('### Assembly instructions', file = doc_file)
+            print('### Assembly instructions\n', file = doc_file)
             print('![%s](assemblies/%s)\n' % (name, name + suffix), file = doc_file)
 
             if "blurb" in ass and ass["blurb"]:
