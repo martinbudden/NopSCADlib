@@ -30,7 +30,7 @@ studding_colour = grey(70);
 leadscrew_colour = grey(70);
 
 module rod(d , l, center = true) { //! Draw a smooth rod with specified diameter and length
-    vitamin(str("rod(", d, ", ", l, "): Smooth rod ", d, "mm x ", l, "mm"));
+    vitamin(str("rod(", d, ", ", l, "): Linear rod ", d, "mm x ", l, "mm"));
 
     chamfer = d / 10;
     color(rod_colour)

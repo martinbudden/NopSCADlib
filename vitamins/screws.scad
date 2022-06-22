@@ -67,26 +67,26 @@ M8_clearance_radius = 8.4 / 2;
 //                                                           e            h
 //                                                           r
 //
-M2_cap_screw     = ["M2_cap", "M2 cap",         hs_cap,   2, 3.8, 2,    1.0, 1.5, 16,  M2_washer, M2_nut,   M2_tap_radius,    M2_clearance_radius];
-M2p5_cap_screw   = ["M2p5_cap", "M2.5 cap",     hs_cap, 2.5, 4.5, 2.5,  1.1, 2.0, 17,M2p5_washer, M2p5_nut, M2p5_tap_radius,  M2p5_clearance_radius];
-M3_cap_screw     = ["M3_cap", "M3 cap",         hs_cap,   3, 5.5, 3,    1.3, 2.5, 18,  M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
-M4_cap_screw     = ["M4_cap", "M4 cap",         hs_cap,   4, 7.0, 4,    2.0, 3.0, 20,  M4_washer, M4_nut,   M4_tap_radius,    M4_clearance_radius];
-M5_cap_screw     = ["M5_cap", "M5 cap",         hs_cap,   5, 8.5, 5,    2.5, 4.0, 22,  M5_washer, M5_nut,   M5_tap_radius,    M5_clearance_radius];
-M6_cap_screw     = ["M6_cap", "M6 cap",         hs_cap,   6, 10,  6,    3.3, 5.0, 24,  M6_washer, M6_nut,   M6_tap_radius,    M6_clearance_radius];
-M8_cap_screw     = ["M8_cap", "M8 cap",         hs_cap,   8, 13,  8,    4.3, 6.0, 28,  M8_washer, M8_nut,   M8_tap_radius,    M8_clearance_radius];
+M2_cap_screw     = ["M2_cap", "M2 caphead",      hs_cap,   2, 3.8, 2,    1.0, 1.5, 16,  M2_washer, M2_nut,   M2_tap_radius,    M2_clearance_radius];
+M2p5_cap_screw   = ["M2p5_cap", "M2.5 caphead",  hs_cap, 2.5, 4.5, 2.5,  1.1, 2.0, 17,M2p5_washer, M2p5_nut, M2p5_tap_radius,  M2p5_clearance_radius];
+M3_cap_screw     = ["M3_cap", "M3 caphead",      hs_cap,   3, 5.5, 3,    1.3, 2.5, 18,  M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
+M4_cap_screw     = ["M4_cap", "M4 caphead",      hs_cap,   4, 7.0, 4,    2.0, 3.0, 20,  M4_washer, M4_nut,   M4_tap_radius,    M4_clearance_radius];
+M5_cap_screw     = ["M5_cap", "M5 caphead",      hs_cap,   5, 8.5, 5,    2.5, 4.0, 22,  M5_washer, M5_nut,   M5_tap_radius,    M5_clearance_radius];
+M6_cap_screw     = ["M6_cap", "M6 caphead",      hs_cap,   6, 10,  6,    3.3, 5.0, 24,  M6_washer, M6_nut,   M6_tap_radius,    M6_clearance_radius];
+M8_cap_screw     = ["M8_cap", "M8 caphead",      hs_cap,   8, 13,  8,    4.3, 6.0, 28,  M8_washer, M8_nut,   M8_tap_radius,    M8_clearance_radius];
 
-M2_cs_cap_screw  = ["M2_cs_cap","M2 cs cap",    hs_cs_cap,2, 3.8, 0,    0.65,1.3, 16,  M2_washer, M2_nut,   M2_tap_radius,    M2_clearance_radius];
-M3_cs_cap_screw  = ["M3_cs_cap","M3 cs cap",    hs_cs_cap,3, 6.0, 0,    1.05,2.0, 18,  M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
-M4_cs_cap_screw  = ["M4_cs_cap","M4 cs cap",    hs_cs_cap,4, 8.0, 0,    1.49,2.5, 20,  M4_washer, M4_nut,   M4_tap_radius,    M4_clearance_radius];
-M5_cs_cap_screw  = ["M5_cs_cap","M5 cs cap",    hs_cs_cap,5,10.0, 0,    3.00,3.0, 22,  M5_washer, M5_nut,   M5_tap_radius,    M5_clearance_radius];
-M6_cs_cap_screw  = ["M6_cs_cap","M6 cs cap",    hs_cs_cap,6,12.0, 0,    2.50,4.0, 24,  M6_washer, M6_nut,   M6_tap_radius,    M6_clearance_radius];
-M8_cs_cap_screw  = ["M8_cs_cap","M8 cs cap",    hs_cs_cap,8,16.0, 0,    3.50,5.0, 28,  M8_washer, M8_nut,   M8_tap_radius,    M8_clearance_radius];
+M2_cs_cap_screw  = ["M2_cs_cap","M2 countersunk",hs_cs_cap,2, 3.8, 0,   0.65,1.3, 16,  M2_washer, M2_nut,   M2_tap_radius,    M2_clearance_radius];
+M3_cs_cap_screw  = ["M3_cs_cap","M3 countersunk",hs_cs_cap,3, 6.0, 0,   1.05,2.0, 18,  M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
+M4_cs_cap_screw  = ["M4_cs_cap","M4 countersunk",hs_cs_cap,4, 8.0, 0,   1.49,2.5, 20,  M4_washer, M4_nut,   M4_tap_radius,    M4_clearance_radius];
+M5_cs_cap_screw  = ["M5_cs_cap","M5 countersunk",hs_cs_cap,5,10.0, 0,   3.00,3.0, 22,  M5_washer, M5_nut,   M5_tap_radius,    M5_clearance_radius];
+M6_cs_cap_screw  = ["M6_cs_cap","M6 countersunk",hs_cs_cap,6,12.0, 0,   3.00,4.0, 24,  M6_washer, M6_nut,   M6_tap_radius,    M6_clearance_radius];
+M8_cs_cap_screw  = ["M8_cs_cap","M8 countersunk",hs_cs_cap,8,16.0, 0,   3.50,5.0, 28,  M8_washer, M8_nut,   M8_tap_radius,    M8_clearance_radius];
 
-M2_dome_screw    = ["M2_dome", "M2 dome",       hs_dome,  2, 3.5, 1.3,  0.6, 1.3, 16,  M2_washer, M2_nut,   M2_tap_radius,    M2_clearance_radius];
-M2p5_dome_screw  = ["M2p5_dome", "M2.5 dome",   hs_dome,2.5, 5.35,1.6,  0.8, 2.0, 17,M2p5_washer, M2p5_nut, M2p5_tap_radius,  M2p5_clearance_radius];
-M3_dome_screw    = ["M3_dome", "M3 dome",       hs_dome,  3, 5.7, 1.65, 1.04,2.0, 18,  M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
-M4_dome_screw    = ["M4_dome", "M4 dome",       hs_dome,  4, 7.6, 2.2,  1.3, 2.5, 20,  M4_washer, M4_nut,   M4_tap_radius,    M4_clearance_radius];
-M5_dome_screw    = ["M5_dome", "M5 dome",       hs_dome,  5, 9.5, 2.75, 1.56,3.0, 22,  M5_washer, M5_nut,   M5_tap_radius,    M5_clearance_radius];
+M2_dome_screw    = ["M2_dome", "M2 buttonhead", hs_dome,  2, 3.5, 1.3,  0.6, 1.3, 16,  M2_washer, M2_nut,   M2_tap_radius,    M2_clearance_radius];
+M2p5_dome_screw=["M2p5_dome", "M2.5 buttonhead",hs_dome,2.5, 5.35,1.6,  0.8, 2.0, 17,M2p5_washer, M2p5_nut, M2p5_tap_radius,  M2p5_clearance_radius];
+M3_dome_screw    = ["M3_dome", "M3 buttonhead", hs_dome,  3, 5.7, 1.65, 1.04,2.0, 18,  M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
+M4_dome_screw    = ["M4_dome", "M4 buttonhead", hs_dome,  4, 7.6, 2.2,  1.3, 2.5, 20,  M4_washer, M4_nut,   M4_tap_radius,    M4_clearance_radius];
+M5_dome_screw    = ["M5_dome", "M5 buttonhead", hs_dome,  5, 9.5, 2.75, 1.56,3.0, 22,  M5_washer, M5_nut,   M5_tap_radius,    M5_clearance_radius];
 
 M2p5_pan_screw   = ["M2p5_pan", "M2.5 pan",     hs_pan, 2.5, 4.7, 1.7,    0,   0, 0, M2p5_washer, M2p5_nut, M2p5_tap_radius,  M2p5_clearance_radius];
 M3_pan_screw     = ["M3_pan", "M3 pan",         hs_pan,   3, 5.4, 2.0,    0,   0, 0,   M3_washer, M3_nut,   M3_tap_radius,    M3_clearance_radius];
