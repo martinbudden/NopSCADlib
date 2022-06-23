@@ -360,7 +360,7 @@ def views(target, do_assemblies = None):
                     print('%s %d x %s |' % ('\n|' if not (i % 3) else '', printed[p]["count"], p), file = doc_file, end = '')
                     if (i % 3) == 2 or i == len(printed) - 1:
                         n = (i % 3) + 1
-                        print('\n|%s' % ('---|' * n), file =  doc_file)
+                        print('\n|%s' % ('----------|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
                             print('| ![%s](stls/%s) %s' % (part, part.replace('.stl','.png'), '|\n' if j == j - 1 else ''), end = '', file = doc_file)
@@ -375,7 +375,7 @@ def views(target, do_assemblies = None):
                     print('%s %d x %s |' % ('\n|' if not (i % 3) else '', routed[r]["count"], r), file = doc_file, end = '')
                     if (i % 3) == 2 or i == len(routed) - 1:
                         n = (i % 3) + 1
-                        print('\n|%s' % ('---|' * n), file =  doc_file)
+                        print('\n|%s' % ('----------|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
                             print('| ![%s](dxfs/%s) %s' % (part, part.replace('.dxf','.png'), '|\n' if j == j - 1 else ''), end = '', file = doc_file)
@@ -390,7 +390,7 @@ def views(target, do_assemblies = None):
                     print('%s %d x %s |' % ('\n|' if not (i % 3) else '', sub_assemblies[a], a), file = doc_file, end = '')
                     if (i % 3) == 2 or i == len(keys) - 1:
                         n = (i % 3) + 1
-                        print('\n|%s' % ('---|' * n), file =  doc_file)
+                        print('\n|%s' % ('----------|' * n), file =  doc_file)
                         for j in range(n):
                             a = keys[i - n + j + 1].replace('_assembly', '_assembled')
                             print('| ![%s](assemblies/%s) %s' % (a, a + '_tn.png', '|\n' if j == j - 1 else ''), end = '', file = doc_file)

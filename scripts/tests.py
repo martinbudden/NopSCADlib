@@ -129,8 +129,8 @@ def tests(tests):
         libtest = True
         lib_blurb = scrape_blurb(scad_name)
         if not os.path.isfile(png_name):
-            openscad.run(scad_name, "-o", png_name, colour_scheme, "--projection=p", image_size, "--camera=0,0,0,50,0,340,500", "--autocenter", "--viewall");
-            do_cmd(["magick", png_name, "-trim", "-resize", "1280", "-bordercolor", background, "-border", "10", png_name])
+            openscad.run(scad_name, "-o", png_name, image_size, colour_scheme, "--projection=p", "--camera=0,0,0,50,0,340,500", "--autocenter", "--viewall");
+            do_cmd(["magick", png_name, "-resize", "1280", "-trim", "-bordercolor", background, "-border", "10", png_name])
     else:
         #
         # Project tests so just a title
