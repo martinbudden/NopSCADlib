@@ -89,8 +89,7 @@ def eop(doc_file, last = False, first = False):
         print("\n---", file = doc_file)
 
 def pad(s, before, after = 0):
-    #return '&nbsp;' * before + str(s) + '&nbsp;' * after
-    return ' ' * (before + 1 - len(str(s))) + str(s) + ' ' * after
+    return '&nbsp;' * before + str(s) + '&nbsp;' * after
 
 def titalise(name):
     cap_next = True
