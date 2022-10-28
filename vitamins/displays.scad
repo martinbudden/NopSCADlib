@@ -127,13 +127,14 @@ BigTreeTech_TFT35v3_0_PCB = ["", "",
 ];
 
 BigTreeTech_TFT35v3_0 = ["BigTreeTech_TFT35v3_0", "BigTreeTech TFT35 v3.0",
-    84.5, 54.5, 4,                      // size
-    BigTreeTech_TFT35v3_0_PCB,          // pcb
-    [7 - (110 - 84.5)/2, 0, 0],         // pcb offset from center
-    [[-40, -26.5], [41.5, 26.5, 0.5]],  // aperture
-    [],                                 // touch screen position and size
-    0,                                  // length that studs protrude from the PCB holes
-    [],                                 // keep out region for ribbon cable
+    85.5, 54.5, 4,                  // size, screen is 84.5 wide, extra 1mm added to allow clearance of ribbon cable at side
+    BigTreeTech_TFT35v3_0_PCB,      // pcb
+    [6.5 - (110 - 85.5)/2, 0, 0],   // pcb offset from center
+//    [ [-85.5/2 + 7, -25.5], [85.5/2 - 3.5, 25.5, 0.5] ],  // aperture
+    [ [-85.5/2 + 7, -25], [85.5/2 - 3.5, 25, 0.5] ],    // aperture
+    [ [-85.5/2 + 7, -25], [85.5/2 - 3.5, 25, 0.25] ],   // touch screen position and size
+    0,                                                  // length that studs protrude from the PCB holes
+    [ [-85.5/2 -1, -54.5/2], [-85.5/2, 54.5/2, 0.5] ],  // keep out region for ribbon cable
 ];
 
 
