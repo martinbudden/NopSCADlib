@@ -351,10 +351,10 @@ def views(target, do_assemblies = None):
             vitamins = ass["vitamins"]
             if vitamins:
                 print("### Vitamins\n",       file = doc_file)
-                print("|Qty|Description|",    file = doc_file)
-                print("|---:|:----------|",    file = doc_file)
+                print("| Qty | Description |",    file = doc_file)
+                print("|----:|:------------|",    file = doc_file)
                 for v in sorted(vitamins, key = lambda s: s.split(":")[-1]):
-                    print("| %d |%s |" % (vitamins[v]["count"], v.split(":")[1]),     file = doc_file)
+                    print("|%4d |%s |" % (vitamins[v]["count"], v.split(":")[1]),     file = doc_file)
                 print("", file = doc_file)
 
             printed = ass["printed"]
