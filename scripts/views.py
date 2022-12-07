@@ -368,8 +368,8 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('----------|' * n), file =  doc_file)
                         for j in range(n):
                             part = keys[i - n + j + 1]
-                            print('| ![%s](stls/%s)%s' % (part, part.replace('.stl','.png'), ' |' if j == n - 1 else ' '), end = '', file = doc_file)
-                print('\n', file  = doc_file)
+                            print('| ![%s](stls/%s)%s' % (part, part.replace('.stl','.png'), ' |\n' if j == n - 1 else ' '), end = '', file = doc_file)
+                print('', file  = doc_file)
 
             routed = ass["routed"]
             if routed:
@@ -402,8 +402,8 @@ def views(target, do_assemblies = None):
                         print('\n|%s' % ('----------|' * n), file =  doc_file)
                         for j in range(n):
                             a = keys[i - n + j + 1].replace('_assembly', '_assembled')
-                            print('| ![%s](assemblies/%s)%s' % (a, a + '_tn.png', ' |' if j == n - 1 else ' '), end = '', file = doc_file)
-                print('\n', file  = doc_file)
+                            print('| ![%s](assemblies/%s)%s' % (a, a + '_tn.png', ' |\n' if j == n - 1 else ' '), end = '', file = doc_file)
+                print('', file  = doc_file)
 
             small = not ass["big"]
             suffix = '_tn.png' if small else '.png'
